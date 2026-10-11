@@ -7,7 +7,7 @@ from minsearch import Index
 from sentence_transformers import SentenceTransformer
 from sqlitesearch import TextSearchIndex, VectorSearchIndex
 
-def load_faq_data():
+def _load_faq_data():
     docs_url = 'https://datatalks.club/faq/json/courses.json'
     response = requests.get(docs_url)
     courses_raw = response.json()
@@ -26,7 +26,7 @@ def load_faq_data():
 
     return documents
 
-def build_index(documents):
+def _build_index(documents):
     index = Index(
         text_fields=["question", "section", "answer"],
         keyword_fields=["course"]
