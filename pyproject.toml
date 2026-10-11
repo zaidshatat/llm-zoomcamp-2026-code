@@ -1,0 +1,26 @@
+[project]
+name = "02-vectore-search"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Zaid Shatat", email = "zaidshatat06@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "minsearch>=0.2.0",
+    "numpy>=2.5.4",
+    "openai>=3.28.0",
+    "python-dotenv>=1.2.4",
+    "requests>=2.34.2",
+    "sentence-transformers>=6.1.0",
+    "sqlitesearch>=0.3.0",
+    "tqdm>=4.70.1",
+]
+
+[project.scripts]
+02-vectore-search = "02_vectore_search:main"
+
+[build-system]
+requires = ["uv_build>=0.12.22,<0.13.0"]
+build-backend = "uv_build"
