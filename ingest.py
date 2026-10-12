@@ -1,5 +1,5 @@
-
 import os
+import psycopg
 import requests
 import numpy as np
 from tqdm import tqdm
@@ -78,4 +78,12 @@ def load_search_vindex():
         keyword_fields=["course"],
         mode="ivf",
         db_path="faq_vector.db"
+    )
+
+def vec_to_str(vector):
+    return '['+','.join([str(x) for x in vector])+']'
+
+def load_pgvector():
+    return psycopg.connect(
+        "postgresql://user:pswd@localhost:5432/faq"
     )
